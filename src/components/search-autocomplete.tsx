@@ -195,7 +195,7 @@ export function SearchAutocomplete({
       return (
         <ul
           ref={listRef}
-          className="max-h-[calc(100dvh-220px)] text-left overflow-x-hidden overflow-y-auto p-1 md:max-h-76 lg:max-h-85 xl:max-h-90 2xl:max-h-120"
+          className="max-h-[calc(100dvh-220px)] text-left overflow-x-hidden overflow-y-auto p-1 lg:max-h-85 xl:max-h-90 2xl:max-h-120"
         >
           {results.map((anime, index) => (
             <li
