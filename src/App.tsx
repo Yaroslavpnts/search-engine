@@ -1,9 +1,12 @@
+import { ApiProvider } from "@/providers/api-provider";
+import SearchPage from "./pages/search-page";
+
 export function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="font-medium">Hello World</div>
-    </div>
-  )
+    <ApiProvider>
+      <SearchPage />
+    </ApiProvider>
+  );
 }
 
-export default App
+export default App;
