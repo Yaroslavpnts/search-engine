@@ -124,11 +124,15 @@ export function SearchAutocomplete({
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        setSelectedIndex((prev) => prev + 1);
+        setSelectedIndex((prev) =>
+          prev < results.length - 1 ? prev + 1 : prev
+        );
         break;
       case "ArrowUp":
         e.preventDefault();
-        setSelectedIndex((prev) => prev - 1);
+        setSelectedIndex((prev) =>
+          prev > 0 ? prev - 1 : prev
+        );
         break;
       case "Enter": {
         e.preventDefault();
@@ -211,18 +215,23 @@ export function SearchAutocomplete({
               onMouseEnter={() => setSelectedIndex(index)}
             >
               {anime.images.jpg.small_image_url && (
-                <img
-                  src={anime.images.jpg.small_image_url}
-                  alt={anime.title}
-                  className="h-10 w-8 shrink-0 rounded-md object-cover"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = "flex";
-                  }}
-                />
+                <>
+                  <img
+                    src={anime.images.jpg.small_image_url}
+                    alt={anime.title}
+                    className="h-10 w-8 shrink-0 rounded-md object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = "flex";
+                    }}
+                  />
+                  <div className="hidden h-10 w-8 shrink-0 rounded-md bg-muted items-center justify-center">
+                    <span className="text-xs text-muted-foreground">?</span>
+                  </div>
+                </>
               )}
               <div className="min-w-0 w-full flex flex-col items-start justify-center">
                 <p className="truncate w-full text-sm">

@@ -21,9 +21,8 @@ export default defineConfig([
     },
     rules: {
       "react-refresh/only-export-components": [
-        {
-          allowConstantExport: true,
-        },
+        "warn",
+        { allowConstantExport: true },
       ],
     },
   },

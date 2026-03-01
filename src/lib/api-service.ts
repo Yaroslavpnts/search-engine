@@ -24,8 +24,13 @@ export interface JikanResponse {
   };
 }
 
+const CONFIG = {
+  DEFAULT_LIMIT: 25,
+} as const;
+
 export class ApiService {
   public readonly baseUrl: string;
+  private readonly defaultLimit: number = CONFIG.DEFAULT_LIMIT;
 
   constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
@@ -33,7 +38,7 @@ export class ApiService {
 
   async search(query: string, signal?: AbortSignal): Promise<JikanResponse> {
     const response = await fetch(
-      `${this.baseUrl}/anime?q=${encodeURIComponent(query)}`,
+      `${this.baseUrl}/anime?q=${encodeURIComponent(query)}?limit=${this.defaultLimit}`,
       { signal },
     );
 
