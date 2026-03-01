@@ -12,7 +12,7 @@ export default function SearchPage() {
       <ThemeToggle />
       <main className="flex flex-1 flex-col items-center px-4 pb-4 pt-12 md:justify-center md:pb-20 md:pt-0">
         <div className="w-full max-w-2xl text-center">
-          <h1 className="mb-4 text-3xl font-normal tracking-tight text-foreground md:mb-8 md:text-5xl lg:text-6xl">
+          <h1 className="text-xl md:text-2xl lg:text-5xl xl:text-6xl font-normal tracking-tight text-foreground mb-4 xl:mb-8 ">
             <span className="font-medium">Anime</span>
             <span className="text-primary/80">Search</span>
           </h1>
