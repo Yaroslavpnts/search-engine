@@ -1,6 +1,6 @@
 import { SearchAutocomplete } from "@/components/search-autocomplete";
 import { ThemeToggle } from "@/components/theme-toggle";
-import type { Anime } from "@/lib/api-service";
+import type { Anime } from "@/types/anime";
 
 export default function SearchPage() {
   const handleSelect = (anime: Anime) => {
