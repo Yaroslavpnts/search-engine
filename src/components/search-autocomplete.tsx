@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useApi } from "@/hooks/use-api";
 import { useDebounce } from "@/hooks/use-debounce";
-import type { Anime } from "@/lib/api-service";
 import { HighlightedText } from "./highlighted-text";
+import type { Anime } from "@/types/anime";
 
 interface SearchAutocompleteProps {
   onSelect?: (anime: Anime) => void;
@@ -125,14 +125,12 @@ export function SearchAutocomplete({
       case "ArrowDown":
         e.preventDefault();
         setSelectedIndex((prev) =>
-          prev < results.length - 1 ? prev + 1 : prev
+          prev < results.length - 1 ? prev + 1 : prev,
         );
         break;
       case "ArrowUp":
         e.preventDefault();
-        setSelectedIndex((prev) =>
-          prev > 0 ? prev - 1 : prev
-        );
+        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
         break;
       case "Enter": {
         e.preventDefault();
