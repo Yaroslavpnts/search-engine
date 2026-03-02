@@ -2,7 +2,7 @@ import type { Anime } from "@/types/anime";
 import type { ApiResponse } from "@/types/pagination";
 
 const CONFIG = {
-  DEFAULT_LIMIT: 25,
+  DEFAULT_LIMIT: 15,
 } as const;
 
 export class ApiService {

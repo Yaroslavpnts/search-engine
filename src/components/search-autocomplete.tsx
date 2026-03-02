@@ -264,7 +264,14 @@ export function SearchAutocomplete({
   return (
     <div className={cn("relative w-full max-w-2xl", className)}>
       <div className="relative flex items-center">
-        <Search className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none z-10" />
+        {!isLoading && (
+          <Search className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none z-10" />
+        )}
+        {isLoading && query.trim() && (
+          <div className="absolute left-4 h-5 w-5 flex items-center justify-center">
+            <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+          </div>
+        )}
         <Input
           ref={inputRef}
           type="text"
