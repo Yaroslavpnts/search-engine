@@ -18,7 +18,7 @@ export class ApiService {
     signal?: AbortSignal,
   ): Promise<ApiResponse<Anime[]>> {
     const response = await fetch(
-      `${this.baseUrl}/anime?q=${encodeURIComponent(query)}?limit=${this.defaultLimit}`,
+      `${this.baseUrl}/anime?q=${encodeURIComponent(query)}&limit=${this.defaultLimit}`,
       { signal },
     );
 
