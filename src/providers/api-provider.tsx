@@ -1,5 +1,5 @@
 import { createContext, type ReactNode } from "react";
-import { ApiService } from "@/lib/api-service";
+import { ApiService } from "@/api/api-service";
 
 const JIKAN_BASE_URL = "https://api.jikan.moe/v4";
 
